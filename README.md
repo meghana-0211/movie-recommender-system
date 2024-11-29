@@ -109,6 +109,8 @@ pip install -r requirements.txt
 - Generate movie embeddings
 
 ## Architecture
+![image](https://github.com/user-attachments/assets/7cfa4d3c-d13b-4912-b1e3-df38bcc4e0e3)
+
 
 ### Data Pipeline
 1. **Data Preprocessing**
@@ -169,6 +171,10 @@ print(recommended_movies)
 - Precision@3: 0.75
 - Diversity Score: 0.68
 - Cold Start Performance: 0.62
+
+## Output Image
+![Screenshot 2024-11-30 014534](https://github.com/user-attachments/assets/36d9c6e9-1fe6-43c6-8665-f4a5cc210c79)
+
 
 ## Contribution Guidelines
 
