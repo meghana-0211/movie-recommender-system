@@ -198,6 +198,9 @@ print(recommended_movies)
 ## License
 MIT License
 
+## References
+https://eprints.uad.ac.id/65078/1/1-Movie%20Recommender%20System%20with%20Cascade%20Hybrid%20Filtering%20Using%20Convolutional%20Neural%20Network.pdf
+
 ## Acknowledgments
 - Kaggle for the dataset
 - Indic-BERT for language processing
