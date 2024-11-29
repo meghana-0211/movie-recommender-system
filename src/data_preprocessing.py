@@ -11,17 +11,11 @@ class DataPreprocessor:
     RAW_DATA_PATH = 'data/bollywood_data_set.csv'
     
     def load_data(self):
-        """Load raw movie dataset"""
         df = pd.read_csv(self.config.RAW_DATA_PATH)
         return df
     
     def _extract_year(self, text):
-        """
-        Extract year from various possible formats:
-        - With parentheses: (2019)
-        - With hyphen: -2012
-        - Standalone year
-        """
+
         text = str(text)
         # Try extracting year from parentheses
         parentheses_match = re.search(r'\((\d{4})\)', text)
@@ -40,6 +34,30 @@ class DataPreprocessor:
         
         # If no year found, return NaN
         return np.nan
+    
+    def _encode_categorial(self, series, delimiter=None, top_n=50):
+        if delimiter:
+            series= series.str.split(delimiter)
+
+        all_categories = series.explode().value_counts()
+
+        top_categories = all_categories.head(top_n).index.tolist()
+
+        category_mapping = {cat: idx for idx, cat in enumerate(top_categories)}
+
+        def encode_entry(entry):
+            if isinstance(entry, list):
+
+                return [category_mapping.get(cat, -1) for cat in entry if cat in category_mapping]
+            else:
+
+                return category_mapping.get(entry, -1)
+    
+
+        encoded = series.apply(encode_entry)
+    
+        return encoded
+
     
     def preprocess_data(self, df):
         """Comprehensive data preprocessing"""
