@@ -8,7 +8,7 @@ class Config:
     # Neo4j Database Configuration
     NEO4J_URI = 'bolt://localhost:7687'
     NEO4J_USERNAME = 'neo4j'
-    NEO4J_PASSWORD = '12345678'
+
     
     # Model Hyperparameters
     EMBEDDING_DIM = 128
