@@ -141,7 +141,7 @@ pip install -r requirements.txt
 ## Evaluation Metrics
 
 1. **NDCG Score**: Ranking quality of recommendations
-2. **Precision@K**: Proportion of relevant recommendations
+2. **Precision**: Proportion of relevant recommendations
 3. **Diversity Score**: Recommendation variety
 4. **Cold Start Performance**: Handling new users/movies
 5. **Sparsity Handling**: Performance in limited data scenarios
